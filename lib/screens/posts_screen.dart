@@ -32,14 +32,14 @@ class _PostsScreenState extends State<PostsScreen> {
       appBar: AppBar(
         title: const Text('App Móvil: Consumo API REST'),
         actions: [
-          IconButton(
+          IconButton( // reto 4
             icon: const Icon(Icons.people),
             tooltip: 'Ver Usuarios',
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const UsersScreen(),
+                  builder: (context) => const UsersScreen(), 
                 ),
               );
             },
@@ -79,14 +79,14 @@ class _PostsScreenState extends State<PostsScreen> {
         // Estado 3: los datos llegaron con éxito
        if (snapshot.hasData) {
         final posts = snapshot.data!;
-        return RefreshIndicator(
+        return RefreshIndicator( // Reto 2
           onRefresh: () async {
             setState(() {
               _futurePosts = _apiService.fetchPosts();
             });
             await _futurePosts; // Espera a que termine de cargar la nueva data
           },
-          child: ListView.builder(
+          child: ListView.builder( 
             itemCount: posts.length,
             itemBuilder: (context, index) {
               final post = posts[index];
@@ -96,9 +96,9 @@ class _PostsScreenState extends State<PostsScreen> {
                   post.title,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text(
+                subtitle: Text( //reto 1 
                   'Usuario ID: ${post.userId}\n${post.body}'),
-                onTap: () {
+                onTap: () {  // reto 3
                   Navigator.push(
                     context,
                     MaterialPageRoute(

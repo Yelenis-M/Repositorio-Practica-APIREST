@@ -27,7 +27,7 @@ class PostDetailScreen extends StatelessWidget {
             const SizedBox(height: 12),
             Chip(
               label: Text('Usuario ID: ${post.userId}'),
-              backgroundColor: Colors.blue.withOpacity(0.1),
+              backgroundColor: Colors.blue.withValues(alpha: 0.1),
             ),
             const Divider(height: 32),
             Text(

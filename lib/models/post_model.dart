@@ -1,6 +1,6 @@
 // Archivo: lib/models/post_model.dart
 class Post {
-  final int userId;
+  final int userId; // <- Nuevo campo agregado
   final int id;
   final String title;
   final String body;
@@ -14,7 +14,7 @@ class Post {
   // que resulta de decodificar el JSON
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
-      userId: json['userId'] as int? ?? 0, // Si es nulo, asigna 0 por defecto
+      userId: json['userId'] as int? ?? 0, // Si es nulo, asigna 0 por defecto, mapeo del Json
       id: json['id'] as int,
       title: json['title'] as String,
       body: json['body'] as String,
